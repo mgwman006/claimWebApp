@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" style="overflow:hidden;">
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="description" content="Home Page">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Maneno Mgwami">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--        <meta http-equiv="refresh" content="60">-->
+        <title>Claim Management</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/claim.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+    </head>
+
+    <body>
+    <header>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="home.html">Home</a>
+
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="row">
+            <div class="col-2">
+
+                <div id="dashBoardId">
+                    <svg width="30" height="30" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"/>
+                        <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"/>
+                    </svg>
+                    Dash Board
+                </div>
+                <div id="projectId">
+                    <svg  width="30" height="30" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                        <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                    Projects
+                </div>
+                <div id="claimId" class="active">
+                    <svg  width="30" height="30" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
+                        <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+                        <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                    Claim
+                </div>
+                <div id="fidicPCCId">
+                    <svg  width="30" height="30" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                        <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5v2z"/>
+                    </svg>
+                    FIDIC PCC
+                </div>
+                <div id="fidicGCCId">
+                    <svg  width="30" height="30" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+                    </svg>
+                    FIDIC GCC
+                </div>
+            </div>
+
+            <div class="col-9">
+
+                <div>
+                    <h1>All Claims</h1>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+
+                    <nav class="navbar bg-light">
+                        <div class="container-fluid">
+                            <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#claimModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                </svg>
+                                New Claim
+                            </button>
+
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="claimModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">New Claim</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <form class="row g-3"  name="claimForm" id="newClaim" >
+
+                                                <div class="col-12">
+                                                    <select class="form-select" aria-label=".form-select-sm example" id="projectSelectId" onchange="projectSelected()">
+                                                        <option selected>Select Project</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" name="claimId" id="floatingClaimId" placeholder="ClaimID" required>
+                                                        <label for="floatingClaimId">ClaimID</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" name="claimCategory" id="floatingClaimCategory" placeholder="Claim Category" required>
+                                                        <label for="floatingClaimCategory">Claim Category</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="form-floating">
+                                                        <textarea class="form-control" name="claimDescription" placeholder="Claim Description" id="floatingClaimDescription" required></textarea>
+                                                        <label for="floatingClaimDescription">Claim Description</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="form-floating">
+                                                        <input type="number" class="form-control" name="claimAmount" id="floatingClaimAmount" min="0" step="0.1" placeholder="Claim Amount" required>
+                                                        <label for="floatingClaimAmount">Claim Amount</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-2">
+                                                    <div class="form-floating">
+                                                        <input type="text" class="form-control" name="currency" id="floatingCurrency" placeholder="Currency" required>
+                                                        <label for="floatingCurrency">Currency</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <div class="form-floating">
+                                                        <input type="number" min="0" step="1" class="form-control" name="claimExtension" id="floatingClaimExtension" placeholder="Claim Extension (Months)" required>
+                                                        <label for="floatingClaimExtension">Claim Extension (Months)</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="form-floating">
+                                                        <textarea class="form-control" name="claimCause" placeholder="Claim Cause" id="floatingClaimCause" required></textarea>
+                                                        <label for="floatingClaimCause">Claim Cause</label>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-6">
+                                                    <select class="form-select" aria-label=".form-select-sm example" id="pccSelectId" onchange="fidicPCCSelected()">
+                                                        <option selected>Fidic PCC</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <select class="form-select" aria-label=".form-select-sm example" id="gccSelectId" onchange="fidicGCCSelected()">
+                                                        <option selected>Fidic GCC</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-2">
+                                                    <button id="saveButton" onclick="createClaim()" class="btn btn-primary">Save</button>
+                                                </div>
+
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </nav>
+
+                </div>
+
+                <div class="row overflow-scroll"  style="max-height: 500px">
+
+                    <div id="projectClaimsDiv" class="container-fluid" style="height: 30rem;">
+                        <caption>List of Claims
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-megaphone" viewBox="0 0 16 16">
+                                <path d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z"/>
+                            </svg>
+                        </caption>
+                        <table class="table caption-top">
+                            <thead class="table-success">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Id</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Cause</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Currency</th>
+                                <th scope="col">More</th>
+                            </tr>
+                            </thead>
+
+                            <tbody id="allClaimsTableBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/bootstrap.bundle.min.js" ></script>
+    <script src="../js/claim.js" ></script>
+    <script src="../js/home.js" ></script>
+    </body>
+
+</html>
