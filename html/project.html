@@ -32,6 +32,7 @@
 
 <section>
     <div class="row">
+
         <div class="col-2">
 
             <div id="dashBoardId">
@@ -41,12 +42,14 @@
                 </svg>
                 Dash Board
             </div>
+
             <div id="projectId" class="active">
                 <svg  width="30" height="30" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
                     <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
                 </svg>
                 Projects
             </div>
+
             <div id="claimId">
                 <svg  width="30" height="30" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
                     <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
@@ -54,6 +57,7 @@
                 </svg>
                 Claim
             </div>
+
             <div id="fidicPCCId">
                 <svg  width="30" height="30" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
                     <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -70,13 +74,15 @@
         </div>
 
         <div class="col-9" >
+
             <div>
-                <h1>Projects</h1>
+                <h1>All Projects</h1>
             </div>
 
             <div style="margin-bottom: 20px;">
                 <nav class="navbar bg-light">
                     <div class="container-fluid">
+
                         <button class="btn btn-outline-info btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -90,16 +96,20 @@
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
 
-                        <!-- Modal -->
+                        <!-- Project Modal -->
                         <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+
                                 <div class="modal-content">
+
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">New Project</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
+
                                     <div class="modal-body">
-                                        <form class="row g-3"  name="projectForm" id="newProject" >
+
+                                        <div class="row g-3"  name="projectForm" id="newProject" >
 
                                             <div class="col-6">
                                                 <div class="form-floating">
@@ -107,54 +117,63 @@
                                                     <label for="floatingProjectId">ProjectID</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-6">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" name="projectTitle" id="floatingProjectTitle" placeholder="Project Title" required>
                                                     <label for="floatingProjectTitle">Project Title</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-12">
                                                 <div class="form-floating">
                                                     <textarea class="form-control" name="projectDescription" placeholder="Description" id="floatingProjectDescription" required></textarea>
                                                     <label for="floatingProjectDescription">Description</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-6">
                                                 <div class="form-floating">
                                                     <input type="number" class="form-control" name="contractValue" id="floatingContractValue" min="0" step="0.1" placeholder="Contract Value" required>
                                                     <label for="floatingContractValue">Contract Value</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-4">
                                                 <div class="form-floating">
                                                     <input type="number" class="form-control" name="variance" id="floatingVariance" min="0" step="0.1" placeholder="Variance" required>
                                                     <label for="floatingVariance">Variance</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-2">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" name="currency" id="floatingCurrency" placeholder="Currency" required>
                                                     <label for="floatingCurrency">Currency</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-6">
                                                 <div class="form-floating">
                                                     <input type="number" min="0" step="1" class="form-control" name="projectDuration" id="floatingProjectDuration" placeholder="Project Duration (Month)" required>
                                                     <label for="floatingProjectDuration">Project Duration (Month)</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-6">
                                                 <div class="form-floating">
                                                     <input type="number" min="0" step="1" class="form-control" name="durationExtension" id="floatingProjectDurationExtension" placeholder="Duration Extension (Months)" required>
                                                     <label for="floatingProjectDurationExtension">Duration Extension (Months)</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-6">
                                                 <div class="form-floating">
                                                     <input type="date" class="form-control" name="startDate" id="floatingStartDate" placeholder="Start Date" required>
                                                     <label for="floatingStartDate">Start Date</label>
                                                 </div>
                                             </div>
+
                                             <div class="col-6">
                                                 <div class="form-floating">
                                                     <input type="date" class="form-control" name="completionDate" id="floatingCompletionDate" placeholder="Completion Date" required>
@@ -162,17 +181,16 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-2">
-                                                <button id="saveButton" onclick="createProject()" class="btn btn-primary">Save</button>
-                                            </div>
+                                        </div>
 
-                                        </form>
                                     </div>
-<!--                                    <div class="modal-footer">-->
-<!--                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-<!--                                        <button type="button" class="btn btn-primary">Save changes</button>-->
-<!--                                    </div>-->
+
+                                    <div class="modal-footer">
+                                        <button id="saveButton" onclick="createProject()" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+                                    </div>
+
                                 </div>
+
                             </div>
                         </div>
 

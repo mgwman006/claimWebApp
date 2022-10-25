@@ -121,13 +121,12 @@ async function fidicGCCSelected()
 
 async function displayClaimList()
 {
-    const getAllClaimsUrl = 'http://localhost:8080/api/claim/getAll';
+    const getAllClaimsUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/claim/getAll';
     let getAllClaimsOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
 
@@ -138,14 +137,14 @@ async function displayClaimList()
 
 async function setPCCSelect(idValue)
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/project/getFidicPCCs?projectId='+idValue;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getFidicPCCs?projectId='+idValue;
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
+
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -155,13 +154,13 @@ async function setPCCSelect(idValue)
 
 async function setGCCSelect()
 {
-    const getAllGCCsUrl = 'http://localhost:8080/api/fidicgcc/getAll';
+    const getAllGCCsUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/fidicgcc/getAll';
     let getAllGCCsOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
+
         }
     };
 
@@ -172,13 +171,12 @@ async function setGCCSelect()
 
 async function setProjectSelect()
 {
-    const url = 'http://localhost:8080/api/project/getAll';
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getAll';
     let getOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
 
@@ -194,49 +192,53 @@ async function createClaim()
         "claimExtension": 0, "claimCause": "",  "currency": ""
     };
 
-    jsonClaim.claimId = document.forms["claimForm"]["claimId"].value;
+    jsonClaim.claimId = document.getElementById("floatingClaimId").value;
     if (jsonClaim.claimId == "")
     {
+        alert("claimId is NULL");
         return false;
     }
 
-    jsonClaim.claimCategory = document.forms["claimForm"]["claimCategory"].value;
+    jsonClaim.claimCategory = document.getElementById("floatingClaimCategory").value;
     if (jsonClaim.claimCategory == "")
     {
+        alert("Claim Category is NULL");
         return false;
     }
 
-    jsonClaim.claimDescription = document.forms["claimForm"]["claimDescription"].value;
+    jsonClaim.claimDescription = document.getElementById("floatingClaimDescription").value;
     if (jsonClaim.claimDescription  == "")
     {
+        alert("Claim Description is NULL");
         return false;
     }
 
-    jsonClaim.currency = document.forms["claimForm"]["currency"].value;
+    jsonClaim.currency = document.getElementById("floatingCurrency").value;
     if (jsonClaim.currency == "")
     {
+        alert("Claim Currency is NULL");
         return false;
     }
 
-    jsonClaim.claimCause = document.forms["claimForm"]["claimCause"].value;
+    jsonClaim.claimCause = document.getElementById("floatingClaimCause").value;
     if (jsonClaim.claimCause == "")
     {
+        alert("Claim Cause is NULL");
         return false;
     }
 
-    jsonClaim.claimAmount = document.forms["claimForm"]["claimAmount"].value;
+    jsonClaim.claimAmount = document.getElementById("floatingClaimAmount").value;
+    jsonClaim.claimExtension = document.getElementById("floatingClaimExtension").value;
 
     /**
-    jsonClaim.claimExtension = document.forms["claimForm"]["claimExtension"].value;
-    if (jsonClaim.claimExtension == 0)
-    {
-        return false;
-    }
-    jsonClaim.claimAmount = document.forms["claimForm"]["claimAmount"].value;
-    if (jsonClaim.claimAmount == 0)
-    {
-        return false;
-    }
+        if (jsonClaim.claimExtension == 0)
+        {
+            return false;
+        }
+        if (jsonClaim.claimAmount == 0)
+        {
+            return false;
+        }
      */
 
 
@@ -244,13 +246,13 @@ async function createClaim()
 
 
 
-    const url = 'http://127.0.0.1:8080/api/claim/saveUpdate?'+'projectId='+projectID+'&fidicPCCId='+fidicPCCID+'&fidicGCCId='+fidicGCCID;
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/claim/saveUpdate?'+'projectId='+projectID+'&fidicPCCId='+fidicPCCID+'&fidicGCCId='+fidicGCCID;
     let options = {
         mode: 'cors',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
+
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -262,8 +264,7 @@ async function createClaim()
     dataResponse1.then(
         function (results)
         {
-            //TODOHERE
-            //window.location.assign("./claim.html")
+            window.location.reload();
         },
         function (error)
         {

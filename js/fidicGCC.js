@@ -26,19 +26,17 @@ displayGCCs().then(
 
 async function displayGCCs()
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/fidicgcc/getAll';
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/fidicgcc/getAll';
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
     let projectData = projectResponse.json();
-    window.console.log(projectData);
     return projectData;
 }
 
@@ -48,32 +46,34 @@ async function createGCC()
         "fidicGCCId": "", "fidicGCCTitle": "", "fidicGCCDescription": ""
     };
 
-    jsonGCC.fidicGCCId = document.forms["gccForm"]["gccId"].value;
+    jsonGCC.fidicGCCId = document.getElementById("floatingGCCId").value;
     if (jsonGCC.fidicGCCId == "")
     {
+        alert("GCCId is NULL");
         return false;
     }
 
-    jsonGCC.fidicGCCTitle = document.forms["gccForm"]["gccTitle"].value;
+    jsonGCC.fidicGCCTitle = document.getElementById("floatingGCCTitle").value;
     if (jsonGCC.fidicGCCTitle == "")
     {
+        alert("GCC Title is NULL");
         return false;
     }
 
-    jsonGCC.fidicGCCDescription = document.forms["gccForm"]["gccDescription"].value;
-    if (jsonGCC.fidicGCCDescription == 0)
+    jsonGCC.fidicGCCDescription = document.getElementById("floatingGCCDescription").value;
+    if (jsonGCC.fidicGCCDescription == "")
     {
+        alert("GCC Description is NULL");
         return false;
     }
 
 
-    const url = 'http://localhost:8080/api/fidicgcc/saveUpdate';
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/fidicgcc/saveUpdate';
     let options = {
         mode: 'cors',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -85,10 +85,8 @@ async function createGCC()
     dataResponse1.then(
         function (results)
         {
-            alert(results);
-           // window.location.reload();
-            //window.console.log(results);
-            window.location.assign("../html/fidicPCC.html");
+           window.location.reload();
+
         },
         function (error)
         {

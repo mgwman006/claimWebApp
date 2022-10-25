@@ -26,14 +26,13 @@ displayPCCs().then(
 
 async function displayPCCs()
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/fidicpcc/getAll';
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/fidicpcc/getAll';
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -47,32 +46,34 @@ async function createPCC()
         "fidicPCCId": "", "fidicPCCTitle": "", "fidicPCCDescription": ""
     };
 
-    jsonPCC.fidicPCCId = document.forms["pccForm"]["pccId"].value;
+    jsonPCC.fidicPCCId = document.getElementById("floatingPCCId").value;
     if (jsonPCC.fidicPCCId == "")
     {
+        alert("PCCId is NULL");
         return false;
     }
 
-    jsonPCC.fidicPCCTitle = document.forms["pccForm"]["pccTitle"].value;
+    jsonPCC.fidicPCCTitle = document.getElementById("floatingPCCTitle").value;
     if (jsonPCC.fidicPCCTitle == "")
     {
+        alert("PCC Title is NULL");
         return false;
     }
 
-    jsonPCC.fidicPCCDescription = document.forms["pccForm"]["pccDescription"].value;
-    if (jsonPCC.fidicPCCDescription == 0)
+    jsonPCC.fidicPCCDescription = document.getElementById("floatingPCCDescription").value;
+    if (jsonPCC.fidicPCCDescription == "")
     {
+        alert("PCC Description is NULL");
         return false;
     }
 
 
-    const url = 'http://localhost:8080/api/fidicpcc/saveUpdate';
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/fidicpcc/saveUpdate';
     let options = {
         mode: 'cors',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -84,10 +85,9 @@ async function createPCC()
     dataResponse1.then(
         function (results)
         {
-            //alert(results);
-            //window.location.reload();
-            //window.console.log(results);
-            window.location.assign("../html/fidicPCC.html");
+
+            window.location.reload();
+
         },
         function (error)
         {

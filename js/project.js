@@ -48,13 +48,12 @@ displayProjectList().then(
 );
 async function displayProjectList()
 {
-    const url = 'http://localhost:8080/api/project/getAll';
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getAll';
     let getOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
 
@@ -71,60 +70,75 @@ async function createProject()
         "projectDuration": 12, "startDate": "", "durationExtension": "", "completionDate": "", "currency": ""
     };
 
-    jsonProject.projectId = document.forms["projectForm"]["projectId"].value;
+    jsonProject.projectId = document.getElementById("floatingProjectId").value;
     if (jsonProject.projectId == "")
     {
+        alert("ProjectID is NULL");
         return false;
     }
-    jsonProject.projectTitle = document.forms["projectForm"]["projectTitle"].value;
+
+    jsonProject.projectTitle = document.getElementById("floatingProjectTitle").value;
     if (jsonProject.projectTitle == "")
     {
+        alert("ProjectTitle is NULL");
         return false;
     }
-    jsonProject.contractValue = document.forms["projectForm"]["contractValue"].value;
+
+    jsonProject.contractValue = document.getElementById("floatingContractValue").value;
     if (jsonProject.contractValue == 0)
     {
+        alert("Contract Value is Zero (0)");
         return false;
     }
-    jsonProject.variance = document.forms["projectForm"]["variance"].value;
+    jsonProject.variance = document.getElementById("floatingVariance").value;
     if (jsonProject.variance == 0)
     {
+        alert("Variance Value is Zero (0)");
         return false;
     }
-    jsonProject.currency = document.forms["projectForm"]["currency"].value;
+
+    jsonProject.currency = document.getElementById("floatingCurrency").value;
     if (jsonProject.currency == "")
     {
+        alert("Currency Value is Zero (0)");
         return false;
     }
-    jsonProject.projectDuration = document.forms["projectForm"]["projectDuration"].value;
+
+    jsonProject.projectDuration = document.getElementById("floatingProjectDuration").value;
     if (jsonProject.projectDuration == 0)
     {
+        alert("Duration Value is Zero (0)");
         return false;
     }
-    jsonProject.durationExtension = document.forms["projectForm"]["durationExtension"].value;
+
+    jsonProject.durationExtension = document.getElementById("floatingProjectDurationExtension").value;
     if (jsonProject.durationExtension < 0)
     {
+        alert("Duration Extension Value is Not Valid");
         return false;
     }
-    jsonProject.startDate = document.forms["projectForm"]["startDate"].value;
+
+    jsonProject.startDate = document.getElementById("floatingStartDate").value;
     if (jsonProject.startDate == null)
     {
+        alert("StartDate value is NULL");
         return false;
     }
-    jsonProject.completionDate = document.forms["projectForm"]["completionDate"].value;
+
+    jsonProject.completionDate = document.getElementById("floatingCompletionDate").value;
     if (jsonProject.completionDate == null)
     {
+        alert("Completion Date value is NULL");
         return false;
     }
 
 
-    const url = 'http://localhost:8080/api/project/saveUpdate';
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/saveUpdate';
     let options = {
         mode: 'cors',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -136,8 +150,7 @@ async function createProject()
     dataResponse1.then(
         function (results)
         {
-            //TODO;
-            //window.location.assign("./claim.html")
+            window.location.reload();
         }, // doesn't run
         function (error)
         {

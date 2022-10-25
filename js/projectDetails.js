@@ -129,13 +129,12 @@ displayProjectPCCs(id).then(
 
 async function setGCCSelectModal()
 {
-    const getAllGCCsUrl = 'http://localhost:8080/api/fidicgcc/getAll';
+    const getAllGCCsUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/fidicgcc/getAll';
     let getAllGCCsOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
 
@@ -146,14 +145,14 @@ async function setGCCSelectModal()
 
 async function setPCCSelectModal()
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/project/getFidicPCCs?projectId='+id;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getFidicPCCs?projectId='+id;
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
+
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -164,27 +163,26 @@ async function setPCCSelectModal()
 
 async function pccSelected()
 {
-    let selectBox = document.getElementById("pccSelectId");
+    let selectBox = document.getElementById("pccSelectModalId");
     let selectedId = selectBox.options[selectBox.selectedIndex].id;
     fidicpccId = selectedId;
 }
 
 async function gccSelected()
 {
-    let selectBox = document.getElementById("gccSelectId");
+    let selectBox = document.getElementById("gccSelectModalId");
     let selectedId = selectBox.options[selectBox.selectedIndex].id;
     fidicgccId = selectedId;
 }
 
 async function displayProjectDetails(idValue)
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/project/getById?projectId='+idValue;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getById?projectId='+idValue;
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
 
@@ -194,14 +192,13 @@ async function displayProjectDetails(idValue)
 }
 async function displayProjectClaims(idValue)
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/project/getClaims?projectId='+idValue;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getClaims?projectId='+idValue;
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -210,14 +207,13 @@ async function displayProjectClaims(idValue)
 }
 async function displayProjectPCCs(idValue)
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/project/getFidicPCCs?projectId='+idValue;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getFidicPCCs?projectId='+idValue;
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -227,14 +223,13 @@ async function displayProjectPCCs(idValue)
 
 async function displayAllPCCs()
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/fidicpcc/getAll';
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/fidicpcc/getAll';
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -260,7 +255,7 @@ async function displayAllPCCs()
 
                 const moreButton = document.createElement("a");
                 moreButton.className = "btn btn-outline-primary btn-sm";
-                moreButton.href="attachPcc.html?projectID="+id+"&pccID="+pccsArray[i].fidicPCCId;
+                moreButton.href="attachPCC.html?projectID="+id+"&pccID="+pccsArray[i].fidicPCCId;
                 moreButton.innerHTML = "select";
                 //moreButton.id = pccsArray[i].fidicPCCId;
                 //moreButton.addEventListener("click",attachPcc(pccsArray[i].fidicPCCId));
@@ -276,15 +271,15 @@ async function displayAllPCCs()
 
 }
 
-async function deleteProject() {
-    const projectUrl = 'http://127.0.0.1:8080/api/project/deleteById?projectId=' + id;
+async function deleteProject()
+{
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/deleteById?projectId=' + id;
 
     let projectOptions = {
         mode: 'cors',
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -357,13 +352,13 @@ async function addClaim()
 
 
 
-    const url = 'http://127.0.0.1:8080/api/claim/saveUpdate?' + 'projectId=' + id + '&fidicPCCId=' + fidicpccId + '&fidicGCCId=' + fidicgccId;
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/claim/saveUpdate?' + 'projectId=' + id + '&fidicPCCId=' + fidicpccId + '&fidicGCCId=' + fidicgccId;
     let options = {
         mode: 'cors',
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
+
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
@@ -374,8 +369,8 @@ async function addClaim()
     let dataResponse1 = response1.json();
     dataResponse1.then(
         function (results) {
-            //TODOHERE
-            //window.location.assign("project.html");
+
+            window.location.reload();
         },
         function (error) {
             alert(error);

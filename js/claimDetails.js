@@ -7,7 +7,7 @@ const claimId = idValueArray[1];
 displayClaimDetails(claimId).then(
     function (claimJsonObject)
     {
-        document.getElementById("claimIdDiv").innerHTML = claimJsonObject.claimId;
+        //document.getElementById("claimIdDiv").innerHTML = claimJsonObject.claimId;
         document.getElementById("claimDescriptionDiv").innerHTML = claimJsonObject.claimDescription;
         document.getElementById("claimCauseDiv").innerHTML = claimJsonObject.claimCause;
         //document.getElementById("claimStatusDiv").innerHTML = claimJsonObject.claimStatus;
@@ -74,14 +74,13 @@ displayClaimGCCs(claimId).then(
 
 async function displayClaimPCCs(idValue)
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/claim/getFidicPCCs?claimId='+idValue;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/claim/getFidicPCCs?claimId='+idValue;
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -91,14 +90,14 @@ async function displayClaimPCCs(idValue)
 
 async function displayClaimGCCs(idValue)
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/claim/getFidicGCCs?claimId='+idValue;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/claim/getFidicGCCs?claimId='+idValue;
 
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
+
         }
     };
     const projectResponse = await fetch(projectUrl, projectOptions);
@@ -108,13 +107,13 @@ async function displayClaimGCCs(idValue)
 
 async function displayClaimDetails(idValue)
 {
-    const projectUrl = 'http://127.0.0.1:8080/api/claim/getById?claimId='+idValue;
+    const projectUrl = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/claim/getById?claimId='+idValue;
     let projectOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
+
         }
     };
 

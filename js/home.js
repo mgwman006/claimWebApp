@@ -174,13 +174,12 @@ function dashBoardClicked()
 
 async function displayProjectsCount()
 {
-    const url = 'http://localhost:8080/api/project/getProjectsCount';
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/project/getProjectsCount';
     let getOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
 
@@ -192,13 +191,12 @@ async function displayProjectsCount()
 
 async function displayClaimsCount()
 {
-    const url = 'http://localhost:8080/api/claim/getClaimsCount';
+    const url = 'http://claimapi-env-1.eba-jymfddee.af-south-1.elasticbeanstalk.com/api/claim/getClaimsCount';
     let getOptions = {
         mode: 'cors',
         method: 'GET',
         headers: {
-            'Content-Type': 'application/json;charset=utf-8',
-            'Access-Control-Allow-Origin': 'http://localhost:8080"'
+            'Content-Type': 'application/json;charset=utf-8'
         }
     };
 
